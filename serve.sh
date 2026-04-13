@@ -4,6 +4,8 @@ uv sync
 
 # Set env variable
 export CUDA_HOME=$(pwd)/.venv/lib/python3.13/site-packages/nvidia/cu13
+export TVM_FFI_CUDA_ARCH_LIST="8.0"
+export TVM_FFI_GPU_BACKEND=cuda
 
 # Patch cuda env
 pushd $(pwd)/.venv/lib/python3.13/site-packages/nvidia/cu13
