@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+uv sync
+
 # Set env variable
 export CUDA_HOME=$(pwd)/.venv/lib/python3.13/site-packages/nvidia/cu13
 
