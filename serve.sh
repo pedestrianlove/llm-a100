@@ -18,6 +18,8 @@ popd
 popd
 
 # Serve
-uv run sglang serve --host 0.0.0.0 --model-path Qwen/Qwen3-Coder-Next --tp 4  --dp 2 \
+export CUDA_VISIBLE_DEVICES="4,5,6,7"
+uv run sglang serve --sleep-on-idle --enable-memory-saver --enable-weights-cpu-backup --host 0.0.0.0 \
+    --model-path Qwen/Qwen3-Coder-Next --tp 4 \
     --tool-call-parser qwen3_coder   --mamba-scheduler-strategy extra_buffer   --page-size 64
 
