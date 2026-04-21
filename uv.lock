@@ -1249,6 +1249,7 @@ dependencies = [
     { name = "nvidia-cuda-runtime" },
     { name = "remote-pdb" },
     { name = "sglang" },
+    { name = "sglang-router" },
     { name = "torch" },
     { name = "torchvision", version = "0.24.1", source = { registry = "https://download.pytorch.org/whl/cu130" }, marker = "python_full_version < '3.15' and platform_machine == 'aarch64' and platform_python_implementation == 'CPython' and sys_platform == 'linux'" },
     { name = "torchvision", version = "0.24.1+cu130", source = { registry = "https://download.pytorch.org/whl/cu130" }, marker = "python_full_version >= '3.15' or platform_machine != 'aarch64' or platform_python_implementation != 'CPython' or sys_platform != 'linux'" },
@@ -1267,6 +1268,7 @@ requires-dist = [
     { name = "nvidia-cuda-runtime", specifier = "==13.0.48" },
     { name = "remote-pdb", specifier = ">=2.1.0" },
     { name = "sglang", specifier = ">=0.5.9" },
+    { name = "sglang-router", specifier = ">=0.3.2" },
     { name = "torch", specifier = "==2.9.1+cu130", index = "https://download.pytorch.org/whl/cu130" },
     { name = "torchvision", specifier = ">=0.24.1", index = "https://download.pytorch.org/whl/cu130" },
 ]
@@ -3200,6 +3202,28 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/3b/a8/2e75eae9f5817510175c299016b9c2fc324d06a9fa56944322a2e731ef59/sglang-0.5.9.tar.gz", hash = "sha256:11b1445bfb039c20217783850fda66a71b814391b2cf313f4e6cadc3b9fea41b", size = 4025332, upload-time = "2026-02-23T08:14:16.04Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/97/b4/37452595c88e00ac446f6fd9cc2c8ee25756d2c519cdf0e3b9c4f50882e0/sglang-0.5.9-py3-none-any.whl", hash = "sha256:8a936c4d25fea605f44254e533cff2144c73ceffbc1f8738aba393461bbb64d1", size = 5201033, upload-time = "2026-02-23T08:14:13.441Z" },
+]
+
+[[package]]
+name = "sglang-router"
+version = "0.3.2"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "aiohttp" },
+    { name = "fastapi" },
+    { name = "orjson" },
+    { name = "setproctitle" },
+    { name = "uvicorn" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e2/14/19020d822877810d1b047073bb41c54a76802e618296af12344f6caa6d2e/sglang_router-0.3.2.tar.gz", hash = "sha256:bdbea1d54cce879fb83d2885d01ee3c006f242d0adbbac806f2fb2b91a5fe73d", size = 1301869, upload-time = "2026-01-15T19:55:17.856Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/fb/33/1f206e3238a709f0f032f5c2a4c9115a5af12245781a5c8eea9a4e692b6f/sglang_router-0.3.2-cp38-abi3-macosx_10_12_x86_64.whl", hash = "sha256:111cf062d018ec307b1427c7211c62696447feda13614a84c24f60a5d7907319", size = 27594300, upload-time = "2026-01-15T19:55:00.149Z" },
+    { url = "https://files.pythonhosted.org/packages/e6/57/5f6ab7f6940ff1612c94fe250170a026ecdf6bf63fa25f1ebd917579112c/sglang_router-0.3.2-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:027e498713affb0f7f3ddf72ce7b14f499080137784c258b26321ec8c18d533b", size = 26307573, upload-time = "2026-01-15T19:55:02.879Z" },
+    { url = "https://files.pythonhosted.org/packages/e7/4f/3e87054427e06f7dd1cc089514d4e29f7946c7c9916009d5fbd3997be6a3/sglang_router-0.3.2-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:40a10f3817b80377c2ceb326b625f24bd06eb97426e5044de722295ec7fa79c0", size = 31039654, upload-time = "2026-01-15T19:55:05.393Z" },
+    { url = "https://files.pythonhosted.org/packages/21/37/2ec21a57e77f7bb66c713a819ea6ffa94b6859c6b3ddd062d3b91d856b86/sglang_router-0.3.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ba5a24951e5e0357fe390782fcd1abd861448a87216832dbf2e501a1dd1548eb", size = 30726976, upload-time = "2026-01-15T19:55:07.886Z" },
+    { url = "https://files.pythonhosted.org/packages/91/de/7774e5909ef986e1fe3f2618e4c47d3d97cdf1efaa7909f60a73fc7afac7/sglang_router-0.3.2-cp38-abi3-musllinux_1_1_aarch64.whl", hash = "sha256:415be7ed1415a0c931155d2bc8abd74e467a074066b41d956ca944eedbcc9b4b", size = 37141388, upload-time = "2026-01-15T19:55:10.393Z" },
+    { url = "https://files.pythonhosted.org/packages/47/fb/485c074c67db41d7582760443dcf98e2cf42793b82e699935f48ff04f3b6/sglang_router-0.3.2-cp38-abi3-musllinux_1_1_x86_64.whl", hash = "sha256:366183fc84865028b6e63d62adc8ce603667abf0162c393170c8c63be1582a49", size = 38289376, upload-time = "2026-01-15T19:55:12.897Z" },
+    { url = "https://files.pythonhosted.org/packages/f8/5f/813b620900310edf41a431f42a7b32f75c793239cb60c454f52f03a52c44/sglang_router-0.3.2-cp38-abi3-win_amd64.whl", hash = "sha256:037f028d6f0e5bae8a84259b49d9857a5427c84653c2d02023fed623ae221530", size = 25838819, upload-time = "2026-01-15T19:55:15.927Z" },
 ]
 
 [[package]]

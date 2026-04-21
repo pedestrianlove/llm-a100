@@ -19,7 +19,8 @@ popd
 
 # Serve
 export CUDA_VISIBLE_DEVICES="4,5,6,7"
-uv run sglang serve --sleep-on-idle --enable-memory-saver --enable-weights-cpu-backup --host 0.0.0.0 \
-    --model-path Qwen/Qwen3-Coder-Next --tp 4 \
+uv run python -m sglang_router.launch_server --sleep-on-idle --enable-memory-saver --enable-weights-cpu-backup \
+    --host 0.0.0.0 --port 30000 \
+    --model-path Qwen/Qwen3-Coder-Next --tp 4 --attention-backend flashinfer \
     --tool-call-parser qwen3_coder   --mamba-scheduler-strategy extra_buffer   --page-size 64
 

@@ -18,6 +18,7 @@ dependencies = [
     "torchvision>=0.24.1",
     "nvidia-cuda-cccl>=13.2.75",
     "cuda-toolkit>=13.2.0",
+    "sglang-router>=0.3.2",
 ]
 
 
