@@ -1,0 +1,10 @@
+# ~/.config/systemd/user/llm-serve-start.timer
+[Unit]
+Description=Start LLM server each morning
+
+[Timer]
+OnCalendar=*-*-* 09:00:00 Asia/Taipei
+Persistent=true
+
+[Install]
+WantedBy=timers.target

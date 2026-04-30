@@ -1,0 +1,7 @@
+# ~/.config/systemd/user/llm-serve-stop.service
+[Unit]
+Description=Stop LLM server
+
+[Service]
+Type=oneshot
+ExecStart=systemctl --user stop llm-serve.service

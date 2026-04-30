@@ -1,0 +1,12 @@
+[Unit]
+Description=Run LLM serve.sh
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Work/llm
+ExecStart=/usr/bin/bash serve.sh
+Restart=on-failure
+RestartSec=15
+
+[Install]
+WantedBy=default.target

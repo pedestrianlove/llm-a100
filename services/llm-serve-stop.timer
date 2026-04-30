@@ -1,0 +1,10 @@
+# ~/.config/systemd/user/llm-serve-stop.timer
+[Unit]
+Description=Stop LLM server each evening
+
+[Timer]
+OnCalendar=*-*-* 19:00:00 Asia/Taipei
+Persistent=true
+
+[Install]
+WantedBy=timers.target
