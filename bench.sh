@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for c in 16 32; do
+for c in 48 64 80; do
   echo "=== concurrency $c ==="
   uv run python -m sglang.bench_serving \
     --backend sglang \
