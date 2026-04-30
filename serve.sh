@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-uv sync
+export PROTOC=$(pwd)/.pixi/envs/default/bin/protoc
+export PROTOC_INCLUDE=$(pwd)/.pixi/envs/default/include
+
+pixi run uv sync
 
 # Set env variable
 export CUDA_HOME=$(pwd)/.venv/lib/python3.13/site-packages/nvidia/cu13
@@ -18,9 +21,14 @@ popd
 popd
 
 # Serve
-export CUDA_VISIBLE_DEVICES="4,5,6,7"
+#export CUDA_VISIBLE_DEVICES="4,5,6,7"
 uv run python -m sglang_router.launch_server --sleep-on-idle --enable-memory-saver --enable-weights-cpu-backup \
     --host 0.0.0.0 --port 30000 \
-    --model-path Qwen/Qwen3-Coder-Next --tp 4 --attention-backend flashinfer \
-    --tool-call-parser qwen3_coder   --mamba-scheduler-strategy extra_buffer   --page-size 64
-
+    --model-path MiniMaxAI/MiniMax-M2.7 \
+    --tp 8 \
+    --ep 8 \
+    --dtype bfloat16 \
+    --tool-call-parser minimax-m2 \
+    --reasoning-parser minimax-append-think \
+    --trust-remote-code \
+    --mem-fraction-static 0.85

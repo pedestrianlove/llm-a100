@@ -1,0 +1,12 @@
+[workspace]
+authors = ["Louie <l159753807@gmail.com>"]
+channels = ["conda-forge"]
+name = "llm"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+protobuf = ">=6.33.5,<7"
+libprotobuf = ">=6.33.5,<7"
