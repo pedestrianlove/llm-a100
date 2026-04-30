@@ -22,13 +22,17 @@ popd
 
 # Serve
 #export CUDA_VISIBLE_DEVICES="4,5,6,7"
+export SGLANG_ENABLE_SPEC_V2=1
+export SGLANG_USE_CUDA_IPC_TRANSPORT=1
 uv run python -m sglang_router.launch_server --sleep-on-idle --enable-memory-saver --enable-weights-cpu-backup \
     --host 0.0.0.0 --port 30000 \
-    --model-path MiniMaxAI/MiniMax-M2.7 \
-    --tp 8 \
-    --ep 8 \
-    --dtype bfloat16 \
-    --tool-call-parser minimax-m2 \
-    --reasoning-parser minimax-append-think \
-    --trust-remote-code \
-    --mem-fraction-static 0.85
+    --model-path Qwen/Qwen3.6-27B \
+    --tp 2
+    --reasoning-parser qwen3 \
+    --tool-call-parser qwen3_coder \
+    --speculative-algorithm EAGLE \
+    --speculative-num-steps 3 \
+    --speculative-eagle-topk 1 \
+    --speculative-num-draft-tokens 4 \
+    --mamba-scheduler-strategy extra_buffer \
+    --mem-fraction-static 0.8
