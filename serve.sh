@@ -36,4 +36,4 @@ uv run python -m sglang_router.launch_server --sleep-on-idle --enable-memory-sav
     --speculative-num-draft-tokens 4 \
     --mamba-scheduler-strategy extra_buffer \
     --cuda-graph-max-bs 512 \
-    --mem-fraction-static 0.9
+    --mem-fraction-static 0.90
