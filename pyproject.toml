@@ -20,6 +20,7 @@ dependencies = [
     "sglang[all]",
     "protobuf>=6.33.6",
     "sglang-router",
+    "maturin>=1.13.1",
 ]
 
 [tool.uv]
