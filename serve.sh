@@ -27,7 +27,7 @@ export SGLANG_USE_CUDA_IPC_TRANSPORT=1
 uv run python -m sglang_router.launch_server --sleep-on-idle --enable-memory-saver --enable-weights-cpu-backup \
     --host 0.0.0.0 --port 30000 \
     --model-path Qwen/Qwen3.6-27B \
-    --tp 2
+    --tp 2 \
     --reasoning-parser qwen3 \
     --tool-call-parser qwen3_coder \
     --speculative-algorithm EAGLE \
