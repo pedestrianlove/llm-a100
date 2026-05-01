@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+export PATH=$HOME/.local/bin:$PATH
 export PROTOC=$(pwd)/.pixi/envs/default/bin/protoc
 export PROTOC_INCLUDE=$(pwd)/.pixi/envs/default/include
 
