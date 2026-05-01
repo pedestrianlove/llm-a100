@@ -4,4 +4,4 @@ Description=Stop LLM server
 
 [Service]
 Type=oneshot
-ExecStart=systemctl --user stop llm-serve.service
+ExecStart=systemctl --user stop llm-serve-start.service

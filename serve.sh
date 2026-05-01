@@ -29,6 +29,7 @@ uv run python -m sglang_router.launch_server --sleep-on-idle --enable-memory-sav
     --host 0.0.0.0 --port 30000 \
     --model-path Qwen/Qwen3.6-27B \
     --tp 2 \
+    --dp-size 4 \
     --reasoning-parser qwen3 \
     --tool-call-parser qwen3_coder \
     --speculative-algorithm EAGLE \
